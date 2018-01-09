@@ -1,0 +1,128 @@
+extends layout
+
+block content
+    link(rel='stylesheet', href='/stylesheets/index.css')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+    #game-wrapper
+    header
+        .container
+            h4 Crystal Clean Service
+            //img.logo(src='https://s122939.gridserver.com/clients/concept/logo.svg')
+    .jumbotron
+        #black
+        .animated.fadeInDown(style='')
+            .container
+                .col-md-12
+                    h1 Building a functional
+                    br.visible-lg
+                    | landing page for marketers
+                    hr(style='width:25%;text-align:left;margin:30px 0; border:2.5px solid #fff;')
+                .col-md-8
+                    h2.subtitle Download these digital industry insights and start driving stronger results for your brand today.
+    #main-wrapper.container
+        .col-md-7.main-content
+            h3 Now you have access to the data you will actually use
+            p Bacon ipsum dolor amet ball tip boudin shoulder beef shank andouille strip steak sirloin meatloaf ground round filet mignon beef ribs chicken. Venison turducken tail, t-bone biltong beef ribs flank pork belly shankle filet mignon cow pork loin capicola cupim.
+            .white-box
+                ul
+                    li
+                        p Short ribs filet mignon sausage andouille. Fatback ground round kevin, cupim turkey cow doner shank bresaola pastrami tenderloin frankfurter biltong.
+                    li
+                        p Cow tail turkey ball tip hamburger leberkas brisket. Leberkas salami beef, landjaeger capicola venison ribeye shank porchetta pastrami biltong spare ribs.
+                    li
+                        p T-bone bacon ham hock, ball tip swine cow picanha prosciutto beef sirloin short loin chicken.
+            p.final-cta Download these digital industry insights and start driving stronger results for your brand today.
+        
+        .col-md-4.col-md-offset-1
+            .form-container
+                h4 Fill out the Form Below to Get Your Quote Now
+                form(action="#", method='POST', name='formContent')
+                    div
+                        label(for='first_name')
+                        input.form-control#firstName(type='text', name='first_name', autocapitalize='words', maxlength='20', placeholder='* First Name', autocomplete='given-name')
+                    div
+                        label(for='last_name')
+                        input.form-control(type='text', name='last_name', autocapitalize='words', maxlength='20', placeholder='Last Name', autocomplete='family-name')
+                    div
+                        label(for='email')
+                        input.form-control#email(type='email', name='email', placeholder='* Email@example.com', autofocus='autofocus', autocomplete='email', maxlength='30')
+                    div 
+                        label(for='phone_number')
+                        input.form-control(type='text', name='phone_number', maxlength='14', placeholder='Phone Number 999-999-999', autocomplete='tel-national')
+                    div
+                        label(for='company')
+                        input.form-control(type='text', name='company', autocapitalize='words', maxlength='30', placeholder='Company Name')
+                    div
+                        label(for='city')
+                        input.form-control(type='text', name='city', maxlength='20', placeholder='City', autocomplete='address-level2')
+                    div
+                        label(for='StateProvince1') State or Province
+                        select.form-control(name='StateProvince1', autocomplete="address-level1")
+                            option.placeholder(value='', disabled='', selected='') STATE ↡
+                            option(value='AL') Alabama
+                            option(value='AK') Alaska
+                            option(value='AZ') Arizona
+                            option(value='AR') Arkansas
+                            option(value='CA') California
+                            option(value='CO') Colorado
+                            option(value='CT') Connecticut
+                            option(value='DE') Delaware
+                            option(value='DC') District Of Columbia
+                            option(value='FL') Florida
+                            option(value='GA') Georgia
+                            option(value='HI') Hawaii
+                            option(value='ID') Idaho
+                            option(value='IL') Illinois
+                            option(value='IN') Indiana
+                            option(value='IA') Iowa
+                            option(value='KS') Kansas
+                            option(value='KY') Kentucky
+                            option(value='LA') Louisiana
+                            option(value='ME') Maine
+                            option(value='MD') Maryland
+                            option(value='MA') Massachusetts
+                            option(value='MI') Michigan
+                            option(value='MN') Minnesota
+                            option(value='MS') Mississippi
+                            option(value='MO') Missouri
+                            option(value='MT') Montana
+                            option(value='NE') Nebraska
+                            option(value='NV') Nevada
+                            option(value='NH') New Hampshire
+                            option(value='NJ') New Jersey
+                            option(value='NM') New Mexico
+                            option(value='NY') New York
+                            option(value='NC') North Carolina
+                            option(value='ND') North Dakota
+                            option(value='OH') Ohio
+                            option(value='OK') Oklahoma
+                            option(value='OR') Oregon
+                            option(value='PA') Pennsylvania
+                            option(value='RI') Rhode Island
+                            option(value='SC') South Carolina
+                            option(value='SD') South Dakota
+                            option(value='TN') Tennessee
+                            option(value='TX') Texas
+                            option(value='UT') Utah
+                            option(value='VT') Vermont
+                            option(value='VA') Virginia
+                            option(value='WA') Washington
+                            option(value='WV') West Virginia
+                            option(value='WI') Wisconsin
+                            option(value='WY') Wyoming
+                    div
+                        label(for='comments')
+                        input.form-control(name='comments', type='text', placeholder='Comments', maxlength='200')
+                    div
+                        input#submit-quote.btn.btn-primary.btn-lg.btn-block(value='Get A Quote')
+    footer
+        .container © 2018 #{appName} LLC. All rights reserved.
+
+    .annotation-content#front-annotation(style="display: none;")
+        .annotation
+            a.close
+                img(src='/img/close.svg')
+            #alert.alert
+
+    script(type="text/javascript", src="/javascripts/clear-canvas.js")
+    script(type="text/javascript", src="/javascripts/main.js")

@@ -1,0 +1,219 @@
+body {
+	background: #fbfbfb !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	margin: 0 0 50px; /* bottom = footer height */
+}
+.container {
+    max-width: 1000px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: 'Montserrat', sans-serif; font-weight:700;
+	text-transform: uppercase;
+	letter-spacing: 2px
+}
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, select:focus, .uneditable-input:focus {
+	border-color: #bd9b60;
+	box-shadow: none;
+	outline: 0 none !important;
+}
+p {
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif; font-weight:300;
+
+	letter-spacing: 1px
+}
+header {
+	background: #1a1d25;
+    padding: 10px 0;
+    height: 15vh;
+    min-height: 60px;
+    h4 {
+        color: #fff;
+    }
+}
+header .logo {
+	max-width: 120px;
+}
+.jumbotron {
+	width: 100%;
+	min-height: 450px;
+	background: url('/img/clean-service.jpg') center center;
+	background-size: cover;
+	opacity: 1;
+	display: table;
+	width: 100%;
+	position: relative;
+	border-radius: 0px;
+	color: white;
+	text-transform: uppercase;
+	margin: 0;
+	-webkit-clip-path: polygon(0 0%, 100% 0, 100% 100%, 0% 85%);
+    clip-path: url(#poly);
+	overflow: hidden;
+}
+.jumbotron h1 {
+    font-size: 50px;
+    color: rgb(228, 228, 228) !important;
+}
+.jumbotron h2 {
+	font-size: 18px;
+    margin: 0;
+    color: rgb(170, 170, 170);
+}
+#video-bg {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: auto;
+	min-width: 100%;
+	height: auto;
+	min-height: 100%;
+	background: #000;
+	z-index: -1;
+	/*background-size: cover;*/
+	opacity: 1;
+}
+#black {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: auto;
+	min-width: 100%;
+	height: auto;
+	min-height: 100%;
+	background: rgba(26,29,37,0.8);
+}
+#main-wrapper {
+	margin-top: 0;
+}
+.main-content {
+	padding-top: 25px;
+}
+.main-content .white-box {
+	padding: 25px;
+	margin: 25px 0;
+	background: #fff
+}
+.main-content ul {
+	list-style: initial;
+	margin-left: 15px
+}
+.main-content .final-cta {
+	font-size: 18px;
+    font-family: 'Montserrat', sans-serif; font-weight:700;
+	text-transform: uppercase
+}
+.form-container {
+	background: #fff;
+	padding: 25px;
+	border-radius: 3px;
+	margin-top: -100px;
+}
+.form-container div {
+	margin: 20px 0;
+}
+.form-container input, .form-container select {
+	border: none;
+	border-bottom: 1px solid #ccc;
+	font-family: 'Open Sans', sans-serif; font-weight:300;
+	font-size: 12px;
+	padding: 3px 0;
+	border-radius: 0px;
+	box-shadow: none;
+	-webkit-appearance: none;
+	color: #000;
+	letter-spacing: 1px
+}
+.form-container option {
+	margin: 0;
+}
+.form-container label {
+	display: none;
+}
+.form-container h4 {
+	margin: 0;
+}
+.form-container .placeholder {
+	color: #000 !important;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 12px;
+	font-family: 'Open Sans', sans-serif; font-weight:300;
+}
+select option:first-child {
+	display: none;
+}
+::-webkit-input-placeholder {
+    color: #000 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-family: Gibson-Light;
+}
+.form-container .btn-primary {
+	background: #00af66;
+	padding: 15px 0;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif; font-weight:700;
+	text-transform: uppercase;
+	color: white
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #000 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif; font-weight:300;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: #000 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif; font-weight:300;
+}
+
+:-ms-input-placeholder {
+    color: #000 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif; font-weight:300;
+}
+footer {
+	color: #999;
+	position: absolute;
+	background: rgba(26,29,37,1);
+	right: 0;
+    bottom: 0;
+    height: 30px;
+	//min-height: 300px;
+	width: 100%;
+	padding: 10px 0;
+	font-size: 12px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .jumbotron {
+        min-height: 460px;
+        padding: 5px 15px;
+    }
+    .jumbotron h1 {
+        font-size: 30px;
+    }
+    .jumbotron h2 {
+        font-size: 16px;
+    }
+    .form-container {
+        margin-top: 20px;
+    }
+} /**** END 320 and 480 ****/

@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/menu.css')
+  aside.profile-card
+    header
+      h1 #{appName}
+      h2 Better Visuals
+    input#check(type='checkbox')
+    label.main(for='check')
+      .title
+        i.fa.fa-bars
+    .container
+      a.plate(href='/main')
+        i.fa.fa-home
+      a.plate(href='#')
+        i.fa.fa-info
+      a.plate(href='/main')
+        i.fa.fa-home
+      a.plate(href='#')
+        i.fa.fa-twitter
+      a.plate(href='#')
+        i.fa.fa-google
+      a.plate(href='#', target='_top')
+        i.fa.fa-facebook
+      a.plate(href='/main', target='_top')
+        i.fa.fa-home
+      a.plate(href='#', target='_blank')
+        i.fa.fa-comments-o
+  script(type="text/javascript", src="/javascripts/menu.js")
+      
