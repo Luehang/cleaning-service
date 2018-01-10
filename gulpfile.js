@@ -5,6 +5,7 @@ const gulp                  = require('gulp'),
     uglify                  = require('gulp-uglify'),
   imagemin                  = require('gulp-imagemin'),
     rename                  = require('gulp-rename'),
+     babel                  = require('gulp-babel'),
       sass                  = require('gulp-sass'),
     cssmin                  = require('gulp-cssmin'),
       maps                  = require('gulp-sourcemaps'),
@@ -30,13 +31,50 @@ function compileReactEs6() {
         .pipe(gulp.dest('public/javascripts'));
 }
 
+function compileReactEs6Min() {
+    var bundler = browserify('src/app.js');
+
+    return bundler
+        .transform('babelify', { presets: ['env', 'react'] })
+        .bundle()
+        .pipe(source('app.js'))
+        .pipe(buffer())
+        .pipe(uglify())
+        .pipe(gulp.dest('public/javascripts'));
+}
+
 gulp.task("react", () => {
     return compileReactEs6();
 });
 
+gulp.task('reactMin', () => {
+    return compileReactEs6Min();
+})
+
+gulp.task('jsMenu', () => {
+    return gulp.src("src/js/menu.js")
+        .pipe(babel({
+            presets: ['env']
+        }))
+        .pipe(uglify())
+        .pipe(rename('menu.min.js'))
+        .pipe(gulp.dest('public/javascripts'));
+});
+
+gulp.task('jsMain', () => {
+    return gulp.src(["src/js/clear-canvas.js", "src/js/main.js"])
+        .pipe(concat('main.min.js'))
+        .pipe(babel({
+            presets: ['env']
+        }))
+        .pipe(uglify())
+        .pipe(gulp.dest('public/javascripts'));
+});
+
 gulp.task('sassMain', () => {
     return gulp.src("src/styles/application.scss")
-        .pipe(maps.init())
+        .pipe(maps.init({ loadMaps: true }))
+        .pipe(maps.identityMap())
         .pipe(sass())
         .pipe(maps.write('.'))
         .pipe(rename('index.css'))
@@ -69,6 +107,12 @@ gulp.task('sassMenuMin', () => {
         .pipe(gulp.dest('public/stylesheets'));
 });
 
+gulp.task('readmeImages', () => {
+    gulp.src(['src/readme/img/*.*'])
+        .pipe(imagemin({optimizationLevel: 5}))
+        .pipe(gulp.dest('doc/images'));
+});
+
 gulp.task('imageMin', () => {
     gulp.src(['src/img/*.*'])
         .pipe(imagemin({optimizationLevel: 5}))
@@ -79,18 +123,22 @@ gulp.task('clean', () => {
     del(['public/stylesheets/*.*.css', 
         'public/stylesheets/*.css*', 
         'public/img', 
-        'public/javascripts/app.js',
-        'public/javascripts/app.js*']);
+        'public/javascripts',
+        'doc/images']);
 });
 
 gulp.task('watchLists', () => {
     gulp.watch('src/styles/**/*.scss', ['sassMain', 'sassMenu']);
     gulp.watch(['src/app.js', 'src/components/**/*.js'], ['react']);
+    gulp.watch('src/js/*.js', ['jsMenu', 'jsMain']);
     gulp.watch('src/img/*.*', ['imageMin']);
+    gulp.watch('src/readme/img/*.*');
 });
 
 gulp.task("default", ['watchLists']);
 
-gulp.task("development", ['clean', 'sassMenu', 'sassMain', 'imageMin', 'react']);
+gulp.task("development", ['clean', 'sassMenu', 'sassMain', 'react', 
+    'jsMenu', 'jsMain', 'imageMin', 'readmeImages']);
 
-gulp.task("build", ['clean', 'sassMenuMin', 'sassMainMin', 'imageMin', 'react']);
+gulp.task("build", ['clean', 'sassMenuMin', 'sassMainMin', 'reactMin', 
+    'jsMenu', 'jsMain', 'imageMin', 'readmeImages']);

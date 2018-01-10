@@ -1,7 +1,7 @@
 {
   "name": "cleaning-shop",
   "version": "0.0.0",
-  "private": true,,
+  "private": true,
   "author": {
     "name": "Lue Hang",
     "email": "luehang17@gmail.com"
@@ -25,6 +25,7 @@
     "node": ">= 7.7.4"
   },
   "dependencies": {
+    "@sendgrid/mail": "^6.1.4",
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
@@ -42,6 +43,7 @@
     "browserify": "^15.0.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssmin": "^0.2.0",
     "gulp-imagemin": "^4.0.0",

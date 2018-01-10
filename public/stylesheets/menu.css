@@ -703,35 +703,35 @@ body {
     color: #111; }
 
 .plate:nth-of-type(1) {
-  background-color: rgba(169, 186, 200, 0.5);
+  background-color: rgba(80, 80, 80, 0.4);
   transition-delay: 0s; }
 
 .plate:nth-of-type(2) {
-  background-color: rgba(135, 225, 223, 0.7);
+  background-color: rgba(80, 80, 245, 0.9);
   transition-delay: 0.1s; }
 
 .plate:nth-of-type(3) {
-  background-color: rgba(80, 81, 110, 0.9);
+  background-color: rgba(114, 80, 80, 0.6);
   transition-delay: 0.2s; }
 
 .plate:nth-of-type(4) {
-  background-color: rgba(80, 84, 245, 0.3);
+  background-color: rgba(253, 111, 171, 0.3);
   transition-delay: 0.3s; }
 
 .plate:nth-of-type(5) {
-  background-color: #c3f550;
+  background-color: rgba(198, 164, 119, 0.5);
   transition-delay: 0.4s; }
 
 .plate:nth-of-type(6) {
-  background-color: rgba(189, 86, 182, 0.5);
+  background-color: rgba(148, 80, 207, 0.6);
   transition-delay: 0.5s; }
 
 .plate:nth-of-type(7) {
-  background-color: rgba(139, 218, 214, 0.1);
+  background-color: #50bcd9;
   transition-delay: 0.6s; }
 
 .plate:nth-of-type(8) {
-  background-color: rgba(227, 104, 80, 0.2);
+  background-color: rgba(126, 167, 132, 0.8);
   transition-delay: 0.7s; }
 
 #check:checked ~ .main + .container .plate {

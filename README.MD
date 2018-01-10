@@ -1,13 +1,13 @@
-# Customer to Customer E-commerce's Source Code
+# Cleaning Marketing Service's Source Code
 
-  This repository holds the source code to **Customer to customer E-commerce** that is built with
+  This repository holds the source code to **Cleaning Marketing Service** that is built with
   **NodeJS/Express/MongoDB**.
 
 # Collaboration
 
   Navigate to the ``package.json`` file and input/create the following.
 
-  ![](doc/source/images/collaboration-package.png)
+  ![](doc/images/collaboration-package.png)
 
 ## Before you Begin
 
@@ -21,12 +21,11 @@
 
 ## Steps to Run Locally
 
-Perform steps 1-4:
+Perform steps 1-3:
 
   1. [Clone the Repo](#1-clone-the-repo)
-  2. [Add Data to Database](#2-add-data-to-database)
-  3. [Edit Files and Create .env File](#3-edit-files-and-create-env-file)
-  4. [Run the Web Application](#4-run-the-web-application)
+  2. [Edit Files and Create .env File](#2-edit-files-and-create-env-file)
+  3. [Run the Web Application](#3-run-the-web-application)
 
 ### 1. Clone the Repo
 
@@ -38,7 +37,7 @@ Perform steps 1-4:
 
   * Find the main ``app.js`` file and skim through it to find the **development logger** for **debugging**.  Uncomment the highlighted code below for testing purposes.
 
-    ![](doc/source/images/dev-logger.png)
+    ![](doc/images/dev-logger.png)
 
   * Modify ``env.example``'s name to ``.env`` and populate the service
   credentials as you create/retrieve the credentials:
