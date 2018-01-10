@@ -53,11 +53,11 @@ gulp.task('reactMin', () => {
 
 gulp.task('jsMenu', () => {
     return gulp.src("src/js/menu.js")
+        .pipe(rename('menu.min.js'))
         .pipe(babel({
             presets: ['env']
         }))
         .pipe(uglify())
-        .pipe(rename('menu.min.js'))
         .pipe(gulp.dest('public/javascripts'));
 });
 
@@ -81,7 +81,7 @@ gulp.task('sassMain', () => {
         .pipe(gulp.dest('public/stylesheets'));
 });
 
-gulp.task('sassMainMin', ['compileSass'], () => {
+gulp.task('sassMainMin', () => {
     return gulp.src('src/styles/application.scss')
         .pipe(sass())
         .pipe(cssmin())
@@ -123,7 +123,7 @@ gulp.task('clean', () => {
     del(['public/stylesheets/*.*.css', 
         'public/stylesheets/*.css*', 
         'public/img', 
-        'public/javascripts',
+        'public/javascripts/**',
         'doc/images']);
 });
 
